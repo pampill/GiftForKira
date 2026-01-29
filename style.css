@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  background: linear-gradient(180deg, #fdf1f6, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  max-width: 380px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #c2185b;
+  margin-bottom: 8px;
+}
+
+.intro {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 🎁 Коробка */
+.box {
+  width: 220px;
+  height: 160px;
+  margin: 0 auto 30px;
+  position: relative;
+  perspective: 800px;
+}
+
+.lid {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  background: linear-gradient(135deg, #d81b60, #f06292);
+  border-radius: 16px 16px 8px 8px;
+  transform-origin: top center;
+  transition: transform 0.8s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.ribbon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 26px;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  transform: translateX(-50%);
+}
+
+.base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(135deg, #f48fb1, #fce4ec);
+  border-radius: 8px 8px 18px 18px;
+  box-shadow: inset 0 4px 8px rgba(255,255,255,0.6),
+              0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* 🎉 Контент под коробкой */
+.content {
+  display: none;
+  animation: fadeUp 1s ease forwards;
+}
+
+.message {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  opacity: 0.8;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
